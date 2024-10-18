@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container {
+            text-align: :center;
+        }
+        button {
+            padding: 3px 11px;
+            color: rgb(244, 244, 244);
+            background: #14c549;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 0;
+            width: 70%;
+            text-align: center;
+            border: 50px;
+            margin-left:15%;
+
+        }
+             }
+            
+    </style>
+</head>
+<body>
+     <h1>Noise Pollution Monitor</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Report Noise</a></li>
+            </ul> 
+            
+        
+            <form action="login.html">
+                <button type="submit">get started</button>
+              </form>
+          
+            <p>&copy; 2024 Noise Pollution Monitor</p>
+            <p>Follow us on social media:</p>
+            <p><a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
+
+</body>
+</html>
