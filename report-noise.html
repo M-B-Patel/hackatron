@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Noise - SilentEra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        #map {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"], textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        #main {
+            padding-top: 0px;
+            padding-left:30%;
+            padding-right:30%;
+            align:left;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Report Noise - SilentEra</h1>
+    </header>
+
+    <main>
+        <h2>Submit a Noise Report</h2>
+        
+        <div id="map"></div>
+
+        <form action="file:///C:/Users/HP/Downloads/New%20folder/submit-noise-report.html" method="post">
+            <label for="location">Your Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter your location" required>
+
+            <label for="noise-level">Noise Level:</label>
+            <input type="range" id="noise-level" name="noise-level" min="1" max="100" value="50">
+
+            <label for="reason">Reason for Noise (Optional):</label>
+            <textarea id="reason" name="reason" rows="4" placeholder="Describe the source of noise..."></textarea>
+            <body>
+
+
+            <main id="main"> 
+                <A href="file:///C:/Users/HP/Downloads/New%20folder/submit-noise-report.html"><button >submit report</button></A>
+                    <a  href="file:///C:/Users/HP/Downloads/New%20folder/dropdown.html"><button type="button" style="background-color: grey; color: white; padding: 10px 14px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+                        back
+                    </button>
+                    </a>            
+            </main>    
+        </form>
+    </main>
+            
+     
+
+    <footer>
+        <p>&copy; 2024 SilentEra | All rights reserved</p>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1HgbrJei5ADgA7zH1beKg5nb7R5XQ2vs&callback=initMap" async defer></script>
+
+    <script>
+        let map, infoWindow;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+            });
+            infoWindow = new google.maps.InfoWindow();
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('You are here.');
+                    infoWindow.open(map);
+                    map.setCenter(pos);
+
+                    document.getElementById('location').value = `Latitude: ${pos.lat}, Longitude: ${pos.lng}`;
+                }, function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
+            infoWindow.open(map);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Bug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 7%;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(170, 49, 49, 0.1);
+            margin-top: 20px;
+            padding-left:7%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        button.btn-submit {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            width:80%;
+        }
+
+        button.btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 7%;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            
+        }
+        #main {
+            padding-top:0%;
+            width:86%;
+            
+
+        }
+    </style>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); 
+            window.location.href = "thankyou.html";
+        }
+    </script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Report a Bug</h1>
+        <p>If you encounter any issues, feel free to report the problem below.</p>
+    </header>
+
+    <main>
+        <section id="report-form">
+            <form id="bug-report-form" action="#" method="post" enctype="multipart/form-data" onsubmit="handleSubmit(event)">
+
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="problem">Describe the Problem:</label>
+                <textarea id="problem" name="problem" placeholder="Describe the issue you're facing" rows="5" required></textarea>
+
+                <label for="file-upload">Attach a File (optional):</label>
+                <input type="file" id="file-upload" name="file-upload">
+                <main id="main"> 
+                    <button type="submit" class="btn-submit"><a href="thankyou.html"></a>Send Report</button>
+                    <a  href="file:///C:/Users/HP/Downloads/New%20folder/dropdown.html"><button type="button" style="background-color: grey; color: white; padding: 10px 14px; padding-left:6%; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+                        back
+                    </button>
+                    </a>            
+               </main>
+
+             
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SilentEra | All rights reserved</p>
+    </footer>
+
+</body>
+</html>
